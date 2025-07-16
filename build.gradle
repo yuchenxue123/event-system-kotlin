@@ -1,0 +1,23 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Kotlin
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+}
+
+group = project.lib_group
+version = project.lib_version
+
+java {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+kotlin {
+    jvmToolchain(8)
+}
