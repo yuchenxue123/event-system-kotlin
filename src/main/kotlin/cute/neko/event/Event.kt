@@ -1,7 +1,7 @@
 package cute.neko.event
 
 interface Event {
-    // This is a marker interface, no properties or methods are needed here.
+    /* This is a marker interface, no properties or methods are needed here. */
 }
 
 open class CancellableEvent : Event {
