@@ -1,6 +1,6 @@
 package cute.neko.event
 
-import cute.neko.event.api.Priority
+import cute.neko.event.api.EventPriority
 
 interface EventListener {
 
@@ -33,12 +33,12 @@ class EventHook<T : Event>(
     val handlerClass: EventListener,
     val handler: Handler<T>,
     val always: Boolean,
-    val priority: Priority,
+    val priority: EventPriority,
 )
 
 inline fun <reified T: Event> EventListener.handler(
     always: Boolean = false,
-    priority: Priority = DefaultPriority.DEFAULT,
+    priority: EventPriority = DefaultPriority.DEFAULT,
     noinline handler: Handler<T>
 ) {
     EventManager.registerEventHook(T::class.java, EventHook(this, handler, always, priority))

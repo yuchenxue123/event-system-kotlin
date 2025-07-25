@@ -1,6 +1,6 @@
 package cute.neko.event.api
 
-interface Priority {
+interface EventPriority {
 
     /**
      * Represents the priority level of an event,
